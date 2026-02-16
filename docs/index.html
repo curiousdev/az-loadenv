@@ -31,14 +31,14 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11/styles/github.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/highlight.js@11/highlight.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/highlight.js@11/languages/bash.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/highlight.js@11/languages/go.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/highlight.js@11/languages/yaml.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/highlight.js@11/languages/ruby.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/highlight.js@11/languages/powershell.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/highlight.js@11/languages/dockerfile.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/bash.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/go.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/yaml.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/ruby.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/powershell.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/dockerfile.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/marked@14/marked.min.js"></script>
   <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
@@ -137,7 +137,7 @@
     function enhanceCodeBlocks(container) {
       if (!container) return;
       container.querySelectorAll('pre code').forEach(block => {
-        hljs.highlightElement(block);
+        if (typeof hljs !== 'undefined') hljs.highlightElement(block);
         const wrapper = block.closest('pre');
         if (wrapper && !wrapper.parentElement.classList.contains('code-block')) {
           const div = document.createElement('div');
